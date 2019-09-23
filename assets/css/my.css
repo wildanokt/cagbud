@@ -1,0 +1,166 @@
+@font-face {
+	font-family: myfont;
+	src: url(myfont/font.ttf);
+}
+
+body {
+	font-family: 'Lato', sans-serif;
+	font-weight: normal;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+.full-screen {
+	height: 100vh;
+}
+
+.text-white {
+	color: white;
+}
+
+.text-primary {
+	color: #323232;
+}
+
+.text-cbcc {
+	color: #003368 !important;
+}
+
+.bg-cbcc {
+	background-color: #08091c !important;
+}
+
+.borderless {
+	border: none;
+}
+
+.imgthumb {
+	width: 100%;
+	height: auto;
+	/* Magic! */
+	max-width: 60vw;
+}
+
+.imgthumbbig {
+	width: 100%;
+	height: auto;
+	/* Magic! */
+	max-width: 80vw;
+}
+
+.slider-cbcc {
+	width: 100%;
+	height: auto;
+	max-width: 100vw;
+}
+
+.btn-outline-warning:hover {
+	color: #003368 !important;
+}
+
+#head {
+	padding-top: 60px;
+}
+
+.timeline-vertical {
+	display: none;
+}
+
+.timeline-horizontal {
+	display: inline;
+}
+
+@media only screen and (max-width: 750px) {
+	.timeline-vertical {
+		display: block;
+	}
+
+	.timeline-horizontal {
+		display: none;
+	}
+}
+
+.btn-xl{
+    padding: 10px 20px;
+	font-size: 20px;
+	border-radius: 10px;
+	width: 90%;
+}
+
+/* accordion bootstrap custom -> FAQ page*/
+
+.myaccordion {
+	width: 100%;
+	height: auto;
+	/* Magic! */
+	max-width: 90vw;
+	/* max-width: 800px; */
+	margin: 50px auto;
+	box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+}
+
+.myaccordion .card, .myaccordion .card:last-child .card-header {
+	border: none;
+}
+
+.myaccordion .card-header {
+	border-bottom-color: #EDEFF0;
+	background: transparent;
+}
+
+.myaccordion .fa-stack {
+	font-size: 15px;
+}
+
+.myaccordion .btn {
+	width: 100%;
+	font-weight: bold;
+	color: #004987;
+	padding: 0;
+}
+
+.myaccordion .btn-link:hover, .myaccordion .btn-link:focus {
+	text-decoration: none;
+}
+
+.myaccordion li+li {
+	margin-top: 10px;
+}
+
+.accHeader {
+	font-size: 1.5vw;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	hyphens: auto;
+}
+
+.break {
+	display: none;
+}
+
+.juara1{
+    background-color:#23cba7;
+    color:#ffffff;
+}
+.juara2{
+    background-color:#2abb9b;
+    color:#ffffff
+}
+.juara3{
+    background-color:#16a085;
+    color:#ffffff
+}
+
+@media only screen and (max-width: 600px) {
+	.accHeader {
+		font-size: 4.5vw;
+		overflow-wrap: break-word;
+		word-wrap: break-word;
+		hyphens: auto;
+	}
+	.break {
+		display: block;
+	}
+}
