@@ -112,10 +112,9 @@ class Auth extends CI_Controller
         } else {
             //validation success
             $data['user'] = [
-                'full_name' => htmlspecialchars($this->input->post('name', true)),
+                'nama_lengkap' => htmlspecialchars($this->input->post('name', true)),
                 'email' => htmlspecialchars($this->input->post('email', true)),
                 'password' => password_hash($this->input->post('password1'), PASSWORD_DEFAULT),
-                'image' => 'default.png',
                 'is_active' => 0,
             ];
 
@@ -327,7 +326,7 @@ class Auth extends CI_Controller
                                                                                             <table align="center" border="0" cellpadding="0" cellspacing="0">
                                                                                                 <tbody>
                                                                                                     <tr>
-                                                                                                        <td align="center" class="ctaButton" style="background-color:#00384f;padding-top:12px;padding-bottom:12px;padding-left:35px;padding-right:35px;border-radius:50px"> <a class="text" href="' . base_url() . 'auth/verify?email=' . $data['email'] . '&token=' . urlencode($data['token']) . '" target="_blank" style="color:#FFFFFF; font-family:Poppins, Helvetica, Arial, sans-serif; font-size:13px; font-weight:600; font-style:normal;letter-spacing:1px; line-height:20px; text-transform:uppercase; text-decoration:none; display:block"> Reset</a>
+                                                                                                        <td align="center" class="ctaButton" style="background-color:#00384f;padding-top:12px;padding-bottom:12px;padding-left:35px;padding-right:35px;border-radius:50px"> <a class="text" href="' . base_url('auth/resetpassword?email=' . $data['email'] . '&token=' . urlencode($data['token'])) . '" target="_blank" style="color:#FFFFFF; font-family:Poppins, Helvetica, Arial, sans-serif; font-size:13px; font-weight:600; font-style:normal;letter-spacing:1px; line-height:20px; text-transform:uppercase; text-decoration:none; display:block"> Reset</a>
                                                                                                         </td>
                                                                                                     </tr>
                                                                                                 </tbody>
@@ -541,6 +540,8 @@ class Auth extends CI_Controller
                 $this->session->set_userdata('reset_pass', $email);
                 //reset password
                 $this->changePassword();
+                //delete token
+                $this->Token_model->deleteToken($token);
             } else {
                 //token false
                 $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">

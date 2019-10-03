@@ -11,7 +11,7 @@
                     <?= $this->session->flashdata('message') ?>
                     <form class="user" method="post" action="<?= base_url('login') ?>">
                         <div class="form-group">
-                            <input type="text" name="email" class="form-control form-control-user" id="email" placeholder="Enter Email Address..." value="<?= set_value('email'); ?>">
+                            <input type="text" name="email" class="form-control form-control-user" id="email" placeholder="Masukkan alamat email..." value="<?= set_value('email'); ?>">
                             <?= form_error('email', '<small class="text-danger">', '</small>'); ?>
                         </div>
                         <div class="form-group">
@@ -25,14 +25,14 @@
 
                     <hr>
                     <div class="text-center">
-                        <a class="small" href="<?= base_url('forgot') ?>">Forgot Password?</a>
+                        <a class="small" href="<?= base_url('forgot') ?>">Lupa Password?</a>
                     </div>
                     <div class="text-center">
-                        <a class="small" href="<?= base_url('register'); ?>">Create an Account!</a>
+                        <a class="small" href="<?= base_url('register'); ?>">Buat akun!</a>
                     </div>
                     <hr>
                     <div class="text-center">
-                        <a class="small" href="<?= base_url(); ?>">Back to website</a>
+                        <a class="small" href="<?= base_url(); ?>">Home</a>
                     </div>
                 </div>
             </div>

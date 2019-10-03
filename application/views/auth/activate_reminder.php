@@ -6,8 +6,8 @@
             </div>
 
             <div class="col-12 ml-md-auto col-md-7 col-lg-6 pb-5 pb-md-0">
-                <h1 class="wow animated fadeInDown">Please check your email</h1>
-                <p class="lead wow animated fadeInDown">we send a confirmation email to ensure that you are not a robot :) (check the spam folder if no email is found)</p>
+                <h1 class="wow animated fadeInDown">Silakan lakukan aktivasi melalui email anda</h1>
+                <p class="lead wow animated fadeInDown">hal ini kami butuhkan untuk memastikan bahwa email anda valid dan anda bukan robot :)</p>
             </div>
         </div>
     </div>
