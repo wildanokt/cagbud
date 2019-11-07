@@ -1,3 +1,34 @@
+<style>
+    .dropdown:hover>.dropdown-menu {
+        display: block;
+    }
+
+    .dropleft:hover>.dropdown-menu {
+        display: block;
+    }
+
+    .dropdown-item:hover>.dropdown-menu {
+        display: block;
+    }
+
+    ul li {
+        list-style-type: none;
+        display: inline;
+    }
+
+    .navbar-nav .nav-link {
+        display: inline-block;
+    }
+
+    .ml-auto {
+        display: inline-block !important;
+    }
+
+    .dropdown>.dropdown-toggle:active {
+        pointer-events: none;
+    }
+</style>
+
 <header>
     <nav class="navbar navbar-expand-md navbar-default fixed-top bg-light wow animated fadeInDown">
         <div class="container">
@@ -42,15 +73,23 @@
                         $thumb = explode(' ', $user['nama_lengkap'])[0];
                         ?>
                         <div class="ml-2 dropdown">
-                            <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <?= "Hai! " . $thumb ?>
                             </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenu">
+                                <img src="<?= base_url('assets/logo.png') ?>" class="img-thumbnail" alt="">
                                 <button class="dropdown-item btn" type="button">Profile</button>
 
                                 <div class="dropdown-divider"></div>
 
-                                <button class="dropdown-item btn" type="button"><a href="<?= base_url('proposal') ?>" style="text-decoration: none; color: black;">Proposal</a></button>
+                                <div class="dropleft">
+                                    <a class="btn nav-link dropdown-toggle" href="#" id="subMenu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                        Proposal
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="subMenu">
+                                        <a class="dropdown-item" href="<?= base_url('proposal') ?>">Ajukan temuan situs</a>
+                                    </div>
+                                </div>
 
                                 <div class="dropdown-divider"></div>
 
