@@ -9,7 +9,18 @@ $route['forgot'] = 'Auth/forgotPassword';
 $route['change'] = 'Auth/changePassword';
 
 
+//situs
+$route['show/:num'] = "Situs/$1";
 
-$route['default_controller'] = 'auth';
+//komentar
+
+
+//pengajuan situs
+$route['proposal']="Situs/insert";
+
+
+
+
+$route['default_controller'] = 'Home';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
