@@ -46,7 +46,7 @@
                         <a class="nav-link" href="<?= base_url() ?>"><span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url() . '#about' ?>">Situs</a>
+                        <a class="nav-link" href="<?= base_url('situs') ?>">Situs</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?= base_url() . '#timeline' ?>">####</a>
@@ -87,7 +87,8 @@
                                         Proposal
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="subMenu">
-                                        <a class="dropdown-item" href="<?= base_url('proposal') ?>">Ajukan temuan situs</a>
+                                        <a class="dropdown-item" href="<?= base_url('input_proposal') ?>">Ajukan temuan situs</a>
+                                        <a class="dropdown-item" href="<?= base_url('managemen') ?>">Atur situs</a>
                                     </div>
                                 </div>
 

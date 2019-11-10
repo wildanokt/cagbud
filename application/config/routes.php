@@ -10,13 +10,15 @@ $route['change'] = 'Auth/changePassword';
 
 
 //situs
-$route['show/:num'] = "Situs/$1";
+$route['situs'] = 'Situs/index';
+$route['situs/(:num)'] = "Situs/show/$1";
+$route['managemen'] = 'Situs/manage';
 
 //komentar
-
+$route['input_komentar'] = 'Komentar/insert';
 
 //pengajuan situs
-$route['proposal']="Situs/insert";
+$route['input_proposal'] = "Situs/insert";
 
 
 

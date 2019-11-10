@@ -29,10 +29,13 @@ class Home extends CI_Controller
         global $userdata;
         global $status;
 
+        $this->load->model('situs_model', 'situs');
+
         $data = [
             'user' => $userdata,
             'status' => $status,
-            'title' => 'CagBud Online'
+            'title' => 'CagBud Online',
+            'all_situs' => $this->situs->getSitus()
         ];
 
         $this->load->view('style/header', $data);

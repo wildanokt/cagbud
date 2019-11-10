@@ -4,10 +4,10 @@ class Komentar_model extends CI_Model
 {
     public function getKomentar($site)
     {
-        return $this->db->get_where("komentar", ["id_situs" => $site])->result_array();
+        return $this->db->query('SELECT komentar.*, user.nama_lengkap FROM komentar JOIN user ON komentar.id_user = user.id WHERE komentar.id_situs=' . $site)->result_array();
     }
 
-    public function setKomentar($data)
+    public function insertKomentar($data)
     {
         $this->db->insert("komentar", $data);
         return $this->db->affected_rows();
