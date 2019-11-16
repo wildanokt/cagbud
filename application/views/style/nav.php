@@ -30,10 +30,11 @@
 </style>
 
 <header>
-    <nav class="navbar navbar-expand-md navbar-default fixed-top bg-light wow animated fadeInDown">
+    <nav class="navbar navbar-expand-md navbar-default bg-light">
         <div class="container">
             <a class="navbar-brand" href="<?= base_url() ?>">
-                <img src="<?= base_url('assets/imgs/logo.png') ?>" height="30" alt="image">
+                <img src="<?= base_url('assets/logo_brand.png') ?>" height="30" alt="image">
+                CAGBUD
             </a>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav1" aria-controls="navbarNav1" aria-expanded="false" aria-label="Toggle navigation">
@@ -47,9 +48,6 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?= base_url('situs') ?>">Situs</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url() . '#timeline' ?>">####</a>
                     </li>
                 </ul>
 
@@ -78,7 +76,7 @@
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenu">
                                 <img src="<?= base_url('assets/logo.png') ?>" class="img-thumbnail" alt="">
-                                <button class="dropdown-item btn" type="button">Profile</button>
+                                <a href="<?= base_url('profile') ?>" class="dropdown-item btn" type="button">Profile</a>
 
                                 <div class="dropdown-divider"></div>
 
@@ -94,7 +92,8 @@
 
                                 <div class="dropdown-divider"></div>
 
-                                <button class="dropdown-item btn btn-danger" type="button"><a href="<?= base_url('logout') ?>" style="text-decoration: none; color: white;">Log out</a></button>
+                                <!-- <button class="dropdown-item btn btn-danger" type="button"><a href="<?= base_url('logout') ?>" style="text-decoration: none; color: white;">Log out</a></button> -->
+                                <a class="dropdown-item btn btn-danger" href="<?= base_url('logout') ?>" style="text-decoration: none; color: white;">Log out</a>
                             </div>
                         </div>
                     <?php break;

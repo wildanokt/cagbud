@@ -35,7 +35,7 @@ class Home extends CI_Controller
             'user' => $userdata,
             'status' => $status,
             'title' => 'CagBud Online',
-            'all_situs' => $this->situs->getSitus()
+            'all_situs' => $this->situs->getSitus("thumb")
         ];
 
         $this->load->view('style/header', $data);

@@ -23,10 +23,9 @@
         <div class="row mt-4">
             <div class="col text-center">
                 <p class="lead">
-                    <a href="https://www.facebook.com/creatonomics/" target="_blank" class="mx-2"><i class="fab fa-facebook" aria-hidden="true"></i></a>
-                    <a href="http://nav.cx/jlmHTxV" class="mx-2" target="_blank"><i class="fab fa-line" aria-hidden="true"></i></a>
-                    <a href="https://www.instagram.com/creatonomics/" target="_blank" class="mx-2"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-                    <a href="https://twitter.com/creatonomics" target="_blank" class="mx-2"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                    <a href="https://www.facebook.com/" target="_blank" class="mx-2"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                    <a href="https://www.instagram.com/" target="_blank" class="mx-2"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                    <a href="https://twitter.com/" target="_blank" class="mx-2"><i class="fab fa-twitter" aria-hidden="true"></i></a>
                 </p>
                 <h6>Made with <i class="fas fa-heart text-danger"></i> by Kelompok 6</h6>
             </div>

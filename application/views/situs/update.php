@@ -7,7 +7,7 @@
                         <?= $this->session->flashdata('message') ?>
                         <div class="row text-center">
                             <div class="col">
-                                <h2>Pengajuan Temuan Situs</h2>
+                                <h2>Update Situs</h2>
                             </div>
                         </div>
                         <div class="row mt-4">
@@ -68,25 +68,11 @@
                         </div>
                         <div class="row mt-4 text-center">
                             <div class="col">
-                                <button class="btn btn-primary">Update</button>
+                                <button type="submit" class="btn btn-primary">Update</button>
                             </div>
                         </div>
                     </div>
                 </form>
-                <script>
-                    document.querySelector('#formulir').addEventListener('submit', function(e) {
-                        var form = this;
-                        e.preventDefault();
-                        Swal.fire({
-                            title: 'Luar biasa!',
-                            text: "Data Pengajuan sedang diproses",
-                            type: 'info',
-                            icon: 'success',
-                        }).then(function() {
-                            form.submit();
-                        })
-                    });
-                </script>
             </div>
         </div>
     </div>

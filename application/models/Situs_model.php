@@ -6,6 +6,9 @@ class Situs_model extends CI_Model
     {
         if ($id == "all") {
             return $this->db->get("situs")->result_array();
+        } else if ($id == "thumb") {
+            $this->db->order_by('id DESC');
+            return $this->db->get("situs", 3)->result_array();
         } else {
             return $this->db->get_where("situs", ["id" => $id])->result_array();
         }

@@ -14,7 +14,7 @@
     <link href="<?= base_url('assets/css/sweetalert2.min.css') ?>" rel="stylesheet">
     <link href="<?= base_url('assets/css/owl/owl.carousel.min.css') ?>" rel="stylesheet">
     <link href="<?= base_url('assets/css/owl/owl.theme.default.min.css') ?>" rel="stylesheet">
-    <!-- <link rel="icon" href="<?= base_url('assets/imgs/favicon.ico') ?>"> -->
+    <link href="<?= base_url('assets/css/my.css') ?>" rel="stylesheet">
 
     <title><?= $title ?></title>
 </head>

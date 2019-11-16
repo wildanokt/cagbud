@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <?php foreach ($all_situs as $situs) { ?>
-                <div class="col-sm-4 mb-3">
+                <div class="col-sm-4 my-4">
                     <div class="card">
                         <div class="card-body">
                             <img src="<?= base_url('assets/uploads/situs/' . $situs['foto']) ?>" class="card-img" alt="">
