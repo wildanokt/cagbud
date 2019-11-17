@@ -13,6 +13,7 @@ $route['mimin'] = 'Admin/index';
 $route['logina'] = 'Admin/login';
 $route['logouta'] = 'Admin/logout';
 $route['a_manage'] = 'Admin/situs';
+$route['verifikasi/(:num)'] = 'Admin/verifikasi/$1';
 
 //user
 $route['profile'] = 'User/profile';

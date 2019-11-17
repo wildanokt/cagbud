@@ -75,6 +75,15 @@ class Admin extends CI_Controller
         $this->load->view('style/footer');
     }
 
+    public function verifikasi($id)
+    {
+        $this->situs->verifikasi($id);
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+                        Situs berhasil diverifikasi
+                        </div>');
+        redirect('a_manage');
+    }
+
     //--------------------------- admin auth -----------------------------------
 
     //admin login function

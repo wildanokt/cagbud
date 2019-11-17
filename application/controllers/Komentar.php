@@ -42,6 +42,12 @@ class Komentar extends CI_Controller
             'id_situs' => $this->input->post('id_situs'),
             'komentar' => htmlspecialchars($this->input->post('komentar'))
         ];
+        if ($status == 0) {
+            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
+             Anda harus login terlebih dahulu
+             </div>');
+            redirect(base_url('login'));
+        }
         $this->komen->insertKomentar($data);
         redirect(base_url('situs/' . $data['id_situs']));
     }

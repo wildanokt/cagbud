@@ -163,7 +163,7 @@ class Situs extends CI_Controller
             $situsData = [
                 'nama_situs' => htmlspecialchars($nama_situs),
                 'id_user' => $userdata['id'],
-                'kode_situs' => 'aaaa',
+                'kode_situs' => '',
                 'deskripsi' => $deskripsi,
                 'foto' => $imgName,
                 'kondisi' => htmlspecialchars($kondisi),

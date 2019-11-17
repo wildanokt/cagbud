@@ -31,4 +31,9 @@ class Situs_model extends CI_Model
         $this->db->delete("situs", ["id" => $id]);
         return $this->db->affected_rows();
     }
+
+    public function verifikasi($id)
+    {
+        $this->db->update('situs', ['is_verif' => 1], ['id' => $id]);
+    }
 }
