@@ -42,6 +42,16 @@
                                 <div class="col">
                                     <div class="card">
                                         <div class="card-body">
+                                            <h3 class="card-title">Bagikan situs ini dengan menyalin link berikut</h3>
+                                            <input type="text" class="form-control" value="<?= base_url('situs/' . $situs['id']) ?>">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row my-3">
+                                <div class="col">
+                                    <div class="card">
+                                        <div class="card-body">
                                             <h3 class="card-title">Berikan komentar anda mengenai situs ini</h3>
                                             <div>
                                                 <form action="<?= base_url('input_komentar') ?>" method="post">

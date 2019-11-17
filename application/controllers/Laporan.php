@@ -16,14 +16,18 @@ class Laporan extends CI_Controller
         global $userdata;
         global $status;
 
-        if ($this->session->userdata('email') != null) {
+        if ($this->session->userdata('pyokopyoko') != null) {
             $status = 1;
-            $userdata = $this->User_model->getUserData($this->session->userdata('email'));
+            $userdata = $this->User_model->getUserData($this->session->userdata('pyokopyoko'));
         } else {
             $status = 0;
             $userdata = [
                 'id' => null
             ];
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+            Anda harus login dahulu
+            </div>');
+            redirect(base_url('logina'));
         }
     }
 
@@ -153,5 +157,11 @@ class Laporan extends CI_Controller
     }
 
     public function delete($id)
-    { }
+    {
+        $this->lapor->deleteLaporan($id);
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+                Laporan berhasil dihapus
+                </div>');
+        redirect(base_url('laporan'));
+    }
 }
