@@ -26,6 +26,11 @@ $route['managemen'] = 'Situs/manage';
 $route['update_situs/(:num)'] = 'Situs/update/$1';
 $route['hapus_situs/(:num)'] = 'Situs/delete/$1';
 
+//laporan
+$route['laporan'] = 'Laporan/index';
+$route['laporan/(:num)'] = 'Laporan/show/$1';
+$route['lapor/(:num)'] = 'Laporan/insert/$1';
+
 //pengajuan situs
 $route['input_proposal'] = "Situs/insert";
 
