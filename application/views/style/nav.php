@@ -75,7 +75,7 @@
                                 <?= "Hai! " . $thumb ?>
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenu">
-                                <img src="<?= base_url('assets/logo.png') ?>" class="img-thumbnail" alt="">
+                                <img src="<?= base_url('assets/uploads/profile/' . $user['foto']) ?>" class="img-thumbnail" alt="">
                                 <a href="<?= base_url('profile') ?>" class="dropdown-item btn" type="button">Profile</a>
 
                                 <div class="dropdown-divider"></div>

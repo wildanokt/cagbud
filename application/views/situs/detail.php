@@ -3,11 +3,11 @@
         <div class="row">
             <div class="col-md-7 mb-4">
                 <a href="<?= base_url('situs') ?>" class="btn btn-primary">
-                    < Kembali</a> </div> </div> <div class="row">
+                    < Kembali </a> </div> </div> <div class="row">
                         <div class="col-md-7 mb-3">
                             <div class="card">
                                 <div class="card-body">
-                                    <img src="<?= base_url('assets/uploads/situs/' . $situs[0]['foto']) ?>" class="img-thumbnail" width="500px" alt="">
+                                    <img src="<?= base_url('assets/uploads/situs/' . $situs['foto']) ?>" class="img-thumbnail" width="500px" alt="">
                                 </div>
                             </div>
                         </div>
@@ -16,10 +16,10 @@
                                 <div class="col">
                                     <div class="card">
                                         <div class="card-body">
-                                            <h2 class="card-title"><?= $situs[0]['nama_situs'] ?></h2>
-                                            <p class="card-text">kode situs : <b><?= $situs[0]['kode_situs'] ?></b></p>
-                                            <p class="card-text">Deskripsi : <br><?= $situs[0]['deskripsi'] ?></p>
-                                            <p class="card-text">Kondisi : <br><?= htmlspecialchars_decode($situs[0]['kondisi']) ?></p>
+                                            <h2 class="card-title"><?= $situs['nama_situs'] ?></h2>
+                                            <p class="card-text">kode situs : <b><?= $situs['kode_situs'] ?></b></p>
+                                            <p class="card-text">Deskripsi : <br><?= $situs['deskripsi'] ?></p>
+                                            <p class="card-text">Kondisi : <br><?= htmlspecialchars_decode($situs['kondisi']) ?></p>
                                         </div>
                                     </div>
                                 </div>
@@ -31,7 +31,7 @@
                                             <h3 class="card-title">Berikan komentar anda mengenai situs ini</h3>
                                             <div>
                                                 <form action="<?= base_url('input_komentar') ?>" method="post">
-                                                    <input type="hidden" name="id_situs" value="<?= $situs[0]['id'] ?>">
+                                                    <input type="hidden" name="id_situs" value="<?= $situs['id'] ?>">
                                                     <textarea name="komentar" class="form-control mb-3" placeholder="Komentar"></textarea>
                                                     <button type="submit" class="btn btn-primary">Kirim</button>
                                                 </form>
@@ -82,3 +82,4 @@
             </div>
         </div>
     </div>
+</div>

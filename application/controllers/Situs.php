@@ -193,7 +193,8 @@ class Situs extends CI_Controller
         $data = [
             'user' => $userdata,
             'status' => $status,
-            'title' => 'Pengajuan Situs'
+            'title' => 'Pengajuan Situs',
+            'situs' => $this->situs->getSitus($id)
         ];
 
         $this->form_validation->set_rules('nama_situs', 'Nama situs', 'required|trim');
@@ -215,7 +216,7 @@ class Situs extends CI_Controller
 
         if ($this->form_validation->run() == false) {
             //validation false
-            $this->load->view('situs/insert', $data);
+            $this->load->view('situs/update', $data);
         } else {
             //validation success
             $nama_situs = $this->input->post('nama_situs');
@@ -228,14 +229,12 @@ class Situs extends CI_Controller
 
             //image upload
             $file_name = 'situs_' . $nama_situs; //rename file
-            // $imgName = $userdata['image'] ? $userdata['image'] : 'default.png'; //prev image
-            $imgName = 'default.png'; //prev image
+            $imgName = $data['situs']['foto']; //prev image
             $image = $_FILES['foto_situs']['name']; //new image
 
             if ($image) {
                 //image not null
                 //set configuration
-
                 //create folder
                 $folder = './assets/uploads/situs/';
                 if (!file_exists($folder)) {
@@ -243,14 +242,18 @@ class Situs extends CI_Controller
                 }
                 $config['upload_path'] = $folder;
                 $config['allowed_types'] = 'gif|jpg|png|jpeg';
-                $config['max_size']     = '2048';
+                $config['max_size']     = '20048';
                 $config['file_name'] = $file_name;
                 $this->load->library('upload', $config);
                 $this->upload->initialize($config);
 
                 if ($this->upload->do_upload('foto_situs')) {
                     //image upload success
-
+                    if ($imgName != 'default.png') {
+                        //delete prev image
+                        $lastImgPath = base_url('assets/uploads/situs/' . $imgName);
+                        unlink($lastImgPath);
+                    }
                     //save new file name
                     $imgName = $this->upload->data('file_name');
                 } else {
@@ -258,13 +261,13 @@ class Situs extends CI_Controller
                     $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">'
                         . $this->upload->display_errors() .
                         '</div>');
-                    redirect('input_proposal');
+                    redirect('update_situs/' . $id);
                 }
             }
             $situsData = [
                 'nama_situs' => htmlspecialchars($nama_situs),
                 'id_user' => $userdata['id'],
-                'kode_situs' => 'aaaa',
+                'kode_situs' => $data['situs']['kode_situs'],
                 'deskripsi' => $deskripsi,
                 'foto' => $imgName,
                 'kondisi' => htmlspecialchars($kondisi),
@@ -279,9 +282,18 @@ class Situs extends CI_Controller
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
              Update situs berhasil
              </div>');
-            redirect();
+            redirect('managemen');
         }
 
         $this->load->view('style/footer');
+    }
+
+    public function delete($id)
+    {
+        $this->situs->deleteSitus($id);
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+             Penghapusan situs berhasil
+             </div>');
+        redirect('managemen');
     }
 }

@@ -21,6 +21,8 @@ $route['edit_profile'] = 'User/editProfile';
 $route['situs'] = 'Situs/index';
 $route['situs/(:num)'] = "Situs/show/$1";
 $route['managemen'] = 'Situs/manage';
+$route['update_situs/(:num)'] = 'Situs/update/$1';
+$route['hapus_situs/(:num)'] = 'Situs/delete/$1';
 
 //pengajuan situs
 $route['input_proposal'] = "Situs/insert";

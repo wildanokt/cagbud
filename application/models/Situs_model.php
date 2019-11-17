@@ -10,7 +10,7 @@ class Situs_model extends CI_Model
             $this->db->order_by('id DESC');
             return $this->db->get("situs", 3)->result_array();
         } else {
-            return $this->db->get_where("situs", ["id" => $id])->result_array();
+            return $this->db->get_where("situs", ["id" => $id])->row_array();
         }
     }
 
