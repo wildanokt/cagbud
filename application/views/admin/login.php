@@ -1,4 +1,4 @@
-<section class="fdb-block" style="background-image: url(<?= base_url('assets/imgs/hero/red.svg') ?>);">
+<section class="fdb-block" style="background-image: url(<?= base_url('assets/imgs/hero/purple.svg') ?>);">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-12 col-md-8 col-lg-7 col-xl-5 text-center">
@@ -9,10 +9,10 @@
                         </div>
                     </div>
                     <?= $this->session->flashdata('message') ?>
-                    <form class="user" method="post" action="<?= base_url('login') ?>">
+                    <form class="user" method="post" action="<?= base_url('logina') ?>">
                         <div class="form-group">
-                            <input type="text" name="email" class="form-control form-control-user" id="email" placeholder="Masukkan alamat email..." value="<?= set_value('email'); ?>">
-                            <?= form_error('email', '<small class="text-danger">', '</small>'); ?>
+                            <input type="text" name="username" class="form-control form-control-user" id="username" placeholder="Masukkan username..." value="<?= set_value('username'); ?>">
+                            <?= form_error('username', '<small class="text-danger">', '</small>'); ?>
                         </div>
                         <div class="form-group">
                             <input type="password" name="password" class="form-control form-control-user" id="password" placeholder="Password">
@@ -22,14 +22,6 @@
                             Login
                         </button>
                     </form>
-
-                    <hr>
-                    <div class="text-center">
-                        <a class="small" href="<?= base_url('forgot') ?>">Lupa Password?</a>
-                    </div>
-                    <div class="text-center">
-                        <a class="small" href="<?= base_url('register'); ?>">Buat akun!</a>
-                    </div>
                     <hr>
                     <div class="text-center">
                         <a class="small" href="<?= base_url(); ?>">Home</a>

@@ -60,7 +60,7 @@ class Auth extends CI_Controller
                     $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
                     Selamat datang!
                     </div>');
-                    redirect(base_url('profile'));
+                    redirect(base_url());
                 } else {
                     //password not matches
                     $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
