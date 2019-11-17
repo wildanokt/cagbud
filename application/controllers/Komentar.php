@@ -19,6 +19,8 @@ class Komentar extends CI_Controller
         if ($this->session->userdata('email') != null) {
             $status = 1;
             $userdata = $this->User_model->getUserData($this->session->userdata('email'));
+        } else if ($this->session->userdata('pyokopyoko') != null) {
+            //
         } else {
             $status = 0;
             $userdata = [];
@@ -67,7 +69,7 @@ class Komentar extends CI_Controller
         } else {
             //validation success
             $komen = $this->input->post('komen');
-            
+
             $komen_data = [
                 'id_user' => $userdata['id'],
                 'id_situs' => $data['komen']['id_situs'],

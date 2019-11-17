@@ -4,7 +4,7 @@ class Komentar_model extends CI_Model
 {
     public function getKomentar($site)
     {
-        return $this->db->query('SELECT komentar.*, user.nama_lengkap FROM komentar JOIN user ON komentar.id_user = user.id WHERE komentar.id_situs=' . $site . ' ORDER BY komentar.id DESC')->result_array();
+        return $this->db->query('SELECT komentar.*, user.nama_lengkap, user.foto FROM komentar JOIN user ON komentar.id_user = user.id WHERE komentar.id_situs=' . $site . ' ORDER BY komentar.id DESC')->result_array();
     }
 
     public function getKomentarbyId($id)

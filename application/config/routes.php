@@ -12,6 +12,7 @@ $route['change'] = 'Auth/changePassword';
 $route['mimin'] = 'Admin/index';
 $route['logina'] = 'Admin/login';
 $route['logouta'] = 'Admin/logout';
+$route['a_manage'] = 'Admin/situs';
 
 //user
 $route['profile'] = 'User/profile';
