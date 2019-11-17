@@ -30,6 +30,7 @@ $route['hapus_situs/(:num)'] = 'Situs/delete/$1';
 $route['laporan'] = 'Laporan/index';
 $route['laporan/(:num)'] = 'Laporan/show/$1';
 $route['lapor/(:num)'] = 'Laporan/insert/$1';
+$route['hapus_laporan/(:num)'] = 'Laporan/delete/$1';
 
 //pengajuan situs
 $route['input_proposal'] = "Situs/insert";

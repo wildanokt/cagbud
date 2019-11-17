@@ -14,6 +14,15 @@
                     </div>
                 </div>
             </div>
+            <div class="col-sm-4 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">Manage Laporan Situs</h3>
+                        <p class="card-text">Berisi daftar laporan</p>
+                        <a href="<?= base_url('laporan') ?>" class="btn btn-outline-primary">Lihat</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
