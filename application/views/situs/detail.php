@@ -5,14 +5,16 @@
                 <a href="<?= base_url('situs') ?>" class="btn btn-primary">
                     < Kembali </a> </div> </div> <div class="row">
                         <div class="col-md-7 mb-3">
-                            <div class="card">
-                                <div class="card-body">
-                                    <img src="<?= base_url('assets/uploads/situs/' . $situs['foto']) ?>" class="img-thumbnail" width="500px" alt="">
+                            <div class="row my-3">
+                                <div class="col">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <img src="<?= base_url('assets/uploads/situs/' . $situs['foto']) ?>" class="img-thumbnail" width="500px" alt="">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-5 mb-3">
-                            <div class="row mb-3">
+                            <div class="row my-3">
                                 <div class="col">
                                     <div class="card">
                                         <div class="card-body">
@@ -24,7 +26,19 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row mb-3">
+                        </div>
+                        <div class="col-md-5 mb-3">
+                            <div class="row my-3">
+                                <div class="col">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h3 class="card-title">Laporkan kerusakan situs</h3>
+                                            <a href="<?= base_url('lapor/' . $situs['id']) ?>" class="btn btn-primary">Laporkan</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row my-3">
                                 <div class="col">
                                     <div class="card">
                                         <div class="card-body">
@@ -40,7 +54,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row mb-3">
+                            <div class="row my-3">
                                 <div class="col">
                                     <div class="card">
                                         <div class="card-body">

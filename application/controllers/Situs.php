@@ -142,7 +142,7 @@ class Situs extends CI_Controller
                 }
                 $config['upload_path'] = $folder;
                 $config['allowed_types'] = 'gif|jpg|png|jpeg';
-                $config['max_size']     = '2048';
+                $config['max_size']     = '20048';
                 $config['file_name'] = $file_name;
                 $this->load->library('upload', $config);
                 $this->upload->initialize($config);
