@@ -12,6 +12,11 @@
                         if ($item['id_user'] == $user['id']) { ?>
                             <li class="list-group-item">
                                 <?= $item['nama_situs'] ?>
+                                <?php if ($item['is_verif'] == 0) { ?>
+                                    <span class="mx-3 badge badge-danger">Belum Terverifikasi</span>
+                                <?php } else { ?>
+                                    <span class="mx-3 badge badge-success">Terverifikasi</span>
+                                <?php } ?>
                                 <a href="<?= base_url('hapus_situs/' . $item['id']) ?>" class="float-right badge badge-danger mx-2">Hapus</a>
                                 <a href="<?= base_url('update_situs/' . $item['id']) ?>" class="float-right badge badge-primary mx-2">edit</a>
                                 <a href="<?= base_url('situs/' . $item['id']) ?>" class="float-right badge badge-success mx-2">lihat</a>

@@ -52,7 +52,7 @@
                                                     foreach ($komentar as $komen) { ?>
                                                     <div class="row">
                                                         <div class="col-3">
-                                                            <img src="<?= base_url('assets/uploads/profile/' . $user['foto']) ?>" class="img-thumbnail" alt="">
+                                                            <img src="<?= base_url('assets/uploads/profile/' . $komen['foto']) ?>" class="img-thumbnail" alt="">
                                                         </div>
                                                         <div class="col-6 py-2">
                                                             <h4><?= $komen['nama_lengkap'] ?></h4>
@@ -68,6 +68,11 @@
                                                                         <a href="<?= base_url('delete_komentar/' . $komen['id_situs'] . '/' . $komen['id']) ?>" class="badge badge-danger">x</a>
                                                                     </div>
                                                                 </div>
+                                                            </div>
+                                                        <?php } ?>
+                                                        <?php if ($this->session->userdata('pyokopyoko') != null && $user['id'] == null) { ?>
+                                                            <div class="col-2">
+                                                                <a href="<?= base_url('delete_komentar/' . $komen['id_situs'] . '/' . $komen['id']) ?>" class="badge badge-danger">x</a>
                                                             </div>
                                                         <?php } ?>
                                                     </div>

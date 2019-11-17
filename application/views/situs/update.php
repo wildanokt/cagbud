@@ -24,6 +24,15 @@
                                 <?= form_error('deskripsi', '<small class="text-danger">', '</small>'); ?>
                             </div>
                         </div>
+                        <?php if ($this->session->userdata('pyokopyoko') != null && $user['id'] == null) { ?>
+                            <div class="row mt-4">
+                                <div class="col">
+                                    <label for="kode">Kode Situs</label>
+                                    <input id="kode" name="kode" type="text" class="form-control" placeholder="kode" value="<?= $situs['kode_situs'] ?>">
+                                    <?= form_error('kode', '<small class="text-danger">', '</small>'); ?>
+                                </div>
+                            </div>
+                        <?php } ?>
                         <div class="row mt-4">
                             <div class="col">
                                 <label for="jalan">Jalan</label>

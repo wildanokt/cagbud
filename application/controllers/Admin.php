@@ -22,7 +22,9 @@ class Admin extends CI_Controller
             $userdata = $this->User_model->getUserData($this->session->userdata('pyokopyoko'));
         } else {
             $status = 0;
-            $userdata = [];
+            $userdata = [
+                'id' => null
+            ];
         }
     }
 
@@ -62,12 +64,24 @@ class Admin extends CI_Controller
         }
 
         $data = [
-            'title' => 'Admin'
+            'user' => $userdata,
+            'status' => $status,
+            'title' => 'Managemen Situs',
+            'all_situs' => $this->situs->getSitus()
         ];
 
         $this->load->view('style/header', $data);
-        $this->load->view('admin/situs/index');
+        $this->load->view('admin/situs/index', $data);
         $this->load->view('style/footer');
+    }
+
+    public function verifikasi($id)
+    {
+        $this->situs->verifikasi($id);
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+                        Situs berhasil diverifikasi
+                        </div>');
+        redirect('a_manage');
     }
 
     //--------------------------- admin auth -----------------------------------
@@ -75,6 +89,10 @@ class Admin extends CI_Controller
     //admin login function
     public function login()
     {
+        if ($this->session->userdata('pyokopyoko') != null) {
+            redirect(base_url('mimin'));
+        }
+
         //validation rules
         $this->form_validation->set_rules('username', 'Username', 'required|trim');
         $this->form_validation->set_rules('password', 'Password', 'required|trim');

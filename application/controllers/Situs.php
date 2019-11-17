@@ -163,7 +163,7 @@ class Situs extends CI_Controller
             $situsData = [
                 'nama_situs' => htmlspecialchars($nama_situs),
                 'id_user' => $userdata['id'],
-                'kode_situs' => 'aaaa',
+                'kode_situs' => '',
                 'deskripsi' => $deskripsi,
                 'foto' => $imgName,
                 'kondisi' => htmlspecialchars($kondisi),
@@ -193,23 +193,20 @@ class Situs extends CI_Controller
         $data = [
             'user' => $userdata,
             'status' => $status,
-            'title' => 'Pengajuan Situs',
+            'title' => 'Perbaruan Situs',
             'situs' => $this->situs->getSitus($id)
         ];
 
         $this->form_validation->set_rules('nama_situs', 'Nama situs', 'required|trim');
         $this->form_validation->set_rules('kondisi', 'Kondisi situs', 'required|trim');
+        if ($this->session->userdata('pyokopyoko') != null) {
+            $this->form_validation->set_rules('kode', 'Kode situs', 'required|trim');
+        }
         $this->form_validation->set_rules('deskripsi', 'Deskripsi situs', 'required|trim');
         $this->form_validation->set_rules('jalan', 'Jalan', 'required|trim');
         $this->form_validation->set_rules('kecamatan', 'Kecamatan', 'required|trim');
         $this->form_validation->set_rules('kota', 'Kota', 'required|trim');
         $this->form_validation->set_rules('provinsi', 'Provinsi', 'required|trim');
-
-        if (empty($_FILES['foto_situs']['name'])) {
-            $this->form_validation->set_rules('foto_situs', 'Photo', 'required|xss_clean');
-        } else {
-            $this->form_validation->set_rules('foto_situs', 'Photo', 'trim|xss_clean');
-        }
 
         $this->load->view('style/header', $data);
         $this->load->view('style/nav', $data);
@@ -226,6 +223,9 @@ class Situs extends CI_Controller
             $kecamatan = $this->input->post('kecamatan');
             $kota = $this->input->post('kota');
             $provinsi = $this->input->post('provinsi');
+            if ($this->session->userdata('pyokopyoko') != null) {
+                $kode = $this->input->post('kode');
+            }
 
             //image upload
             $file_name = 'situs_' . $nama_situs; //rename file
@@ -266,7 +266,7 @@ class Situs extends CI_Controller
             }
             $situsData = [
                 'nama_situs' => htmlspecialchars($nama_situs),
-                'id_user' => $userdata['id'],
+                'id_user' => $data['situs']['id_user'],
                 'kode_situs' => $data['situs']['kode_situs'],
                 'deskripsi' => $deskripsi,
                 'foto' => $imgName,
@@ -277,12 +277,34 @@ class Situs extends CI_Controller
                 'kota' => $kota,
                 'provinsi' => $provinsi,
             ];
+            if ($this->session->userdata('pyokopyoko') != null) {
+                $situsData = [
+                    'nama_situs' => htmlspecialchars($nama_situs),
+                    'id_user' => $data['situs']['id_user'],
+                    'kode_situs' => $kode,
+                    'deskripsi' => $deskripsi,
+                    'foto' => $imgName,
+                    'kondisi' => htmlspecialchars($kondisi),
+                    'is_verif' => $data['situs']['is_verif'],
+                    'jalan' => $jalan,
+                    'kecamatan' => $kecamatan,
+                    'kota' => $kota,
+                    'provinsi' => $provinsi,
+                ];
+            }
             //store updated data to database
             $this->situs->updateSitus($id, $situsData);
-            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
-             Update situs berhasil
-             </div>');
-            redirect('managemen');
+            if ($this->session->userdata('pyokopyoko') != null) {
+                $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+                Update situs berhasil
+                </div>');
+                redirect('a_manage');
+            } else {
+                $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+                Update situs berhasil
+                </div>');
+                redirect('managemen');
+            }
         }
 
         $this->load->view('style/footer');
