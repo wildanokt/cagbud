@@ -1,4 +1,4 @@
-<div class="fdb-block" style="background-image: url(<?= base_url('assets/imgs/hero/red.svg') ?>);">
+<div class="fdb-block full-screen" style="background-image: url(<?= base_url('assets/imgs/hero/red.svg') ?>);">
     <div class="container">
         <div class="row">
             <div class="col-md-7 mb-4">

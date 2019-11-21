@@ -24,10 +24,6 @@ class Laporan extends CI_Controller
             $userdata = [
                 'id' => null
             ];
-            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
-            Anda harus login dahulu
-            </div>');
-            redirect(base_url('logina'));
         }
     }
 
@@ -35,6 +31,14 @@ class Laporan extends CI_Controller
     {
         global $userdata;
         global $status;
+
+        if ($this->session->userdata('pyokopyoko') == null) {
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+            Anda harus login dahulu
+            </div>');
+            redirect(base_url('logina'));
+        }
+
         $data = [
             'user' => $userdata,
             'status' => $status,
@@ -52,6 +56,13 @@ class Laporan extends CI_Controller
     {
         global $userdata;
         global $status;
+
+        if ($this->session->userdata('pyokopyoko') == null) {
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+            Anda harus login dahulu
+            </div>');
+            redirect(base_url('logina'));
+        }
 
         $data = [
             'user' => $userdata,
@@ -158,6 +169,12 @@ class Laporan extends CI_Controller
 
     public function delete($id)
     {
+        if ($this->session->userdata('pyokopyoko') == null) {
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+            Anda harus login dahulu
+            </div>');
+            redirect(base_url('logina'));
+        }
         $this->lapor->deleteLaporan($id);
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
                 Laporan berhasil dihapus
