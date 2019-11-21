@@ -74,8 +74,12 @@ class Situs extends CI_Controller
             'user' => $userdata,
             'status' => $status,
             'title' => 'Managemen Situs',
-            'all_situs' => $this->situs->getSitus()
         ];
+        if ($status == 1) {
+            $data['all_situs'] = $this->situs->getUserSitus($userdata['id']);
+        } else {
+            $data['all_situs'] = null;
+        }
 
         $this->load->view('style/header', $data);
         $this->load->view('style/nav', $data);

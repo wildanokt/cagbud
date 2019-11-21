@@ -14,6 +14,11 @@ class Situs_model extends CI_Model
         }
     }
 
+    public function getUserSitus($id)
+    {
+        return $this->db->get_where('situs', ['id_user' => $id])->result_array();
+    }
+
     public function insertSitus($data)
     {
         $this->db->insert("situs", $data);

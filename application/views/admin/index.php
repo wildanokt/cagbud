@@ -1,4 +1,4 @@
-<section class="fdb-block">
+<section class="fdb-block full-screen">
     <div class="container">
         <a href="<?= base_url('logouta') ?>" class="btn btn-outline-danger">Log Out</a>
         <hr>

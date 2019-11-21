@@ -1,4 +1,4 @@
-<section class="fdb-block" style="background-image: url(<?= base_url('assets/imgs/hero/red.svg') ?>);">
+<section class="fdb-block full-screen" style="background-image: url(<?= base_url('assets/imgs/hero/red.svg') ?>);">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-12 col-md-8 col-lg-7 col-md-5">
@@ -20,7 +20,7 @@
                         <div class="row mt-4">
                             <div class="col">
                                 <label for="deskripsi">Deskripsi Situs</label>
-                                <textarea id="deskripsi" name="deskripsi" class="form-control" placeholder="Deskripsi"></textarea>
+                                <textarea id="deskripsi" name="deskripsi" class="form-control" placeholder="Deskripsi"><?= set_value('deskripsi') ?></textarea>
                                 <?= form_error('deskripsi', '<small class="text-danger">', '</small>'); ?>
                             </div>
                         </div>
@@ -55,7 +55,7 @@
                         <div class="row mt-4">
                             <div class="col">
                                 <label for="kondisi">Kondisi Situs</label>
-                                <textarea id="kondisi" name="kondisi" class="form-control" placeholder="Kondisi"></textarea>
+                                <textarea id="kondisi" name="kondisi" class="form-control" placeholder="Kondisi"><?= set_value('kondisi') ?></textarea>
                                 <?= form_error('kondisi', '<small class="text-danger">', '</small>'); ?>
                             </div>
                         </div>
@@ -68,7 +68,7 @@
                         </div>
                         <div class="row mt-4 text-center">
                             <div class="col">
-                                <button class="btn btn-primary">Update</button>
+                                <button class="btn btn-primary">Ajukan</button>
                             </div>
                         </div>
                     </div>
@@ -76,16 +76,32 @@
                 <script>
                     document.querySelector('#formulir').addEventListener('submit', function(e) {
                         var form = this;
+
                         e.preventDefault();
                         Swal.fire({
-                            title: 'Luar biasa!',
-                            text: "Data Pengajuan sedang diproses",
-                            type: 'info',
-                            icon: 'success',
-                        }).then(function() {
-                            form.submit();
+                            text: "Pastikan semua data terisi dengan benar",
+                            type: 'Info',
+                            showCancelButton: true,
+                            confirmButtonColor: '#3085d6',
+                            cancelButtonColor: '#d33',
+                            confirmButtonText: 'Ya!'
+                        }).then(function(result) {
+                            if (result.value) {
+                                Swal.fire({
+                                    text: "Data pengajuan sedang diproses",
+                                    icon: 'success'
+                                }).then(function() {
+                                    form.submit();
+                                });
+                            } else {
+                                Swal.fire({
+                                    title: 'Proses dihentikan!',
+                                    text: "Silakan perbarui data pengajuan",
+                                    icon: 'cancel'
+                                })
+                            }
                         })
-                    });
+                    })
                 </script>
             </div>
         </div>

@@ -1,4 +1,4 @@
-<section class="fdb-block" style="background-image: url(<?= base_url('assets/imgs/hero/red.svg') ?>);">
+<section class="fdb-block full-screen" style="background-image: url(<?= base_url('assets/imgs/hero/red.svg') ?>);">
     <div class="container">
         <div class="fdb-box wow animated fadeInUp">
             <?= $this->session->flashdata('message') ?>
