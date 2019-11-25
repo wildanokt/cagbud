@@ -37,7 +37,7 @@ class Admin extends CI_Controller
         $data = [
             'title' => 'Admin',
             'all_situs' => $this->situs->getSitus(),
-            'admin' => $this->User_model->getUserData('admin'),
+            'admin' => $this->User_model->getAdminData($userdata['email']),
         ];
 
         if ($status == 0) {
@@ -108,7 +108,7 @@ class Admin extends CI_Controller
             $this->load->view('admin/login');
         } else {
             //validation success
-            $this->_login();
+            $this->_logina();
         }
 
         //load footer
@@ -116,7 +116,7 @@ class Admin extends CI_Controller
     }
 
     //login process
-    private function _login()
+    private function _logina()
     {
         $username = $this->input->post('username');
         $password = $this->input->post('password');
